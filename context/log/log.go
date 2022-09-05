@@ -18,7 +18,7 @@ func Println(ctx context.Context,msg string){
 	// below code is doing following : receiving the context , adding id value to the context
 	//and sending it  back using as wrapper function & decorate.
 
-	func decorate(f http.HandlerFunc) http.HanlderFunc{
+	func decorate(f http.HandlerFunc) http.HandlerFunc{
 		return (w http.ResponseWriter, r *http.Request){
 			ctx:= r.Context()
 			id:= rand.Int63()
